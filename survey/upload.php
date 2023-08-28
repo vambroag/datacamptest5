@@ -58,8 +58,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     '$q_healthy','$q_lunch','$q_medicine','$q_sit','$q_sleep','$q_smoke','$q_state',
     '$q_stress','$q_tired','$qf_birthpill','$qf_breastfeed','$qf_menopause','$qf_pregnant')";
 
-    if($conn -> query($sql))echo "<script>alert('등록 성공');</script>";
-    else echo "<script>alert('등록 실패');</script>";
+    if($conn -> query($sql)){
+        echo "<script>alert('등록 성공'); location.href='../result/kalium/kalium.html';</script>";
+    }
+    else {
+        echo "<script>alert('등록 실패');</script>";
+    }
 
 }
 ?>
